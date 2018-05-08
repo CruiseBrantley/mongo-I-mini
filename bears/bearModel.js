@@ -1,27 +1,27 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const definition = {
   species: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
   },
   latinName: {
     type: String,
-    required: true
+    required: true,
   },
   createdOn: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 };
 
 const options = {
-  timestamps: true
+  timestamps: true,
 };
 
 const bearSchema = new mongoose.Schema(definition, options);
 
-const bearModel = mongoose.model("Bear", bearSchema, "bears");
+const bearModel = mongoose.model('Bear', bearSchema, 'bears');
 
 module.exports = bearModel;
